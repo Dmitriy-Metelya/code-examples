@@ -1,0 +1,50 @@
+.eo-to-dos-email-area {
+  background-color: $white;
+  border-right: 1px solid $silver-six;
+  height: 100%;
+
+  &__no-task-selected-message {
+    font-size: $font-size-16px;
+    font-weight: $font-weight-medium;
+    margin-top: 5rem;
+    text-align: center;
+  }
+
+  &__assigned-to-wrapper {
+    background-color: $athens-gray;
+    border-bottom: 1px solid $silver-six;
+    
+    padding: 10px 1.1429rem;
+  }
+
+  &__assigned-to-select {
+    width: 14.2857rem;
+  }
+
+  &__buttons-wrapper {
+    background-color: $athens-gray;
+    border-top: 1px solid $pale-grey-two;
+
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 10px 1.1429rem;
+
+    .button-linkio {
+      width: auto;
+    }
+  }
+
+  .eo-email-form {
+    margin: 1.1429rem;
+
+    .input-component-linkio__input_is-disabled, .input-component-linkio__wrapper_is-disabled {
+      background-color: $white;
+      color: $charcoal-grey-two;
+    }
+  }
+
+  .ql-container {
+    height: 21.0714rem;
+  }
+}

@@ -1,0 +1,14 @@
+.eo-email-templates-bulk-actions {
+  margin-bottom: 1rem;
+
+  &__row {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__row-item {
+    align-items: center;
+    display: flex;
+  }
+}
