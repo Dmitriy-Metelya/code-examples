@@ -18,6 +18,16 @@ import { optionsList } from 'common/prop_types_shapes';
 
 import { fetchUsersAsOptions } from 'api/user';
 
+const stringifyOptionsIds = (immutableOptions) => {
+  const optionsWithIdAsNum = immutableOptions.toJS();
+  const optionsWithIdAsString = optionsWithIdAsNum.map((option) => ({
+    ...option,
+    value: option.value.toString(),
+  }));
+
+  return optionsWithIdAsString;
+};
+
 const EoEmailTemplatesBulkActionsContainer = ({
   immutableBrandsOptions,
   immutableUsersOptions,
@@ -44,17 +54,8 @@ const EoEmailTemplatesBulkActionsContainer = ({
   const isFetchingFilterOptions = fetchingState === 'isFetching';
   const hideDataFilter = (!queryParams.filters && !hasEoEmailTemplates) || isFetchingFilterOptions;
 
-  const usersOptionsWithIdAsNum = immutableUsersOptions.toJS();
-  const usersOptionsWithIdAsString = usersOptionsWithIdAsNum.map((option) => ({
-    ...option,
-    value: option.value.toString(),
-  }));
-
-  const brandsOptionsWithIdAsNum = immutableBrandsOptions.toJS();
-  const brandsOptionsWithIdAsString = brandsOptionsWithIdAsNum.map((option) => ({
-    ...option,
-    value: option.value.toString(),
-  }));
+  const usersOptionsWithIdAsString = stringifyOptionsIds(immutableUsersOptions);
+  const brandsOptionsWithIdAsString = stringifyOptionsIds(immutableBrandsOptions);
 
   return (
     <EoEmailTemplatesBulkActionsComponent
